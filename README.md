@@ -1,7 +1,7 @@
 # PAO-lab :proiect + activitate lab
 
 Proiect:
-# Poa-librarie-online-232
+# PAO-librarie-online-232
 
 Name of library: Infinite stock 
 
