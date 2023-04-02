@@ -1,7 +1,7 @@
 # PAO-lab :proiect + activitate lab
 
 Proiect:
-# PAO-evidenta-librarie-online
+# PAO-evidenta-librarie
 
 
 Tema 1:
