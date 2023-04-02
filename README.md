@@ -10,7 +10,7 @@ Definire proiect:
 Name of app : What is going on in my library?
 
 Evidenta librarie online unde sunt vandute produse de tip carte/manual, program facut pentru cel care detine libraria si vrea sa tina evidenta cumparatorilor si a comenzilor precum si a produselor(si daca sunt sau nu in stoc,cate din acelasi tip de produs sunt in stoc). 
-
+...........................................................
 OBIECTE:
 
 codul e id-ul = cod unic 
@@ -18,12 +18,17 @@ a Produs (clasa baza,abstracta) : (cod,pret,editura,nume,einstoc,catesuntinstoc)
 
  1.Carte (clasa derivata a)      (+,autor, sectiune,sub-sectiune)
 
-Exp sectiune : Beletristica,Istorie,Psihologie,Filosofie, Dezvoltare personala 
+  Exp sectiune : Beletristica,Istorie,Psihologie,Filosofie, Dezvoltare personala 
+  
 
-Exemple sub- sectiuni : 
+  Exemple sub- sectiuni : 
+  
 Beletristica: Literatura universala  Literatura romaneasca, Thriller/Politiste ,Adolescenti  Carti ecranizate Carti de dragoste  Fantezie  SF 
+
 Istorie : Religii Istorie universala  Istoria romaniei Istorie antica si medieval Biogarfie/Autobiografie
+
 Dezvoltare personala: Sanatate   Terapie prin relaxare si arta  Parenting  Spiritualitate 
+
 
      11 Carti pt copii    (clasa derivata 1)
     (+varsta de recomandare)
@@ -43,13 +48,23 @@ b.Cumparator(id, adresa livrare, nume comparator, numar telefon, email)
 
 c.Comanda : (id,id-urile produselor, pretul total, id cititor)
 
-Main class
+..............................................................
 
-Service classes + Service-implement classes:
+ Main class
 
-ProdusService + ProdusServiceImpl
-ComandaService + ComandaServiceImpl
-UserService + UserServiceImpl
+...............................................................
+
+ Service classes + Service-implement classes:
+ 
+
+     ProdusService + ProdusServiceImpl
+ 
+     ComandaService + ComandaServiceImpl
+ 
+     UserService + UserServiceImpl
+     
+     
+................................................................
 
 ACTIUNI POSIBILE:
 
@@ -74,7 +89,8 @@ ACTIUNI POSIBILE:
 
  10.Gaseste comanda dupa id
 
- 
+.................................................................
+
 **Stocul scade cand apare produsul in comanda, daca stoc = 0 atunci nu e in stoc, initial din fiecare produs sunt cate 3
 
 
