@@ -9,14 +9,17 @@ Definire proiect:
 
 Name of library: Infinite stock 
 
-Librarie online unde sunt vandute produse de tip carte/manual, program facut pentru cumparator care alege cateva produse puse pe sectiuni bine delimitate pentru a gasi ce isi doreste cat mai eficient si isi vede totalul si istoricul comenzii si pt vanzator sa vada cat trb sa primeasca si unde trebuie sa livreze.
+Evidenta librarie online unde sunt vandute produse de tip carte/manual, program facut pentru cel care detine libraria si vrea sa tina evidenta cumparatorilor si a comenzilor precum si a produselor(si daca sunt sau nu in stoc,cate din acelasi tip de produs sunt in stoc). 
 
 OBIECTE:
-a Produs (clasa baza) : (pret,editura,nume)
+
+codul e id-ul = cod unic 
+a Produs (clasa baza,abstracta) : (cod,pret,editura,nume,einstoc,catesuntinstoc)
 
  1.Carte (clasa derivata a)      (+,autor, sectiune,sub-sectiune)
 
 Exp sectiune : Beletristica,Istorie,Psihologie,Filosofie, Dezvoltare personala 
+
 Exemple sub- sectiuni : 
 Beletristica: Literatura universala  Literatura romaneasca, Thriller/Politiste ,Adolescenti  Carti ecranizate Carti de dragoste  Fantezie  SF 
 Istorie : Religii Istorie universala  Istoria romaniei Istorie antica si medieval Biogarfie/Autobiografie
@@ -30,35 +33,42 @@ Dezvoltare personala: Sanatate   Terapie prin relaxare si arta  Parenting  Spiri
 
  2.Manuale (clasa derivata a)       (+materie)
 
-    21Manuale scolare & Culegeri si caiete auxiliare (clasa derivata 2)    
+    21 Manuale scolare & Culegeri si caiete auxiliare (clasa derivata 2)    
       (+ nivel educational pe clase) 
- 
-    23 Olimpiade si concursuri (clasa derivata 2)    
-    (+ etapa,nume concurs)  
- 
-    24 Examene  (clasa derivata 2)    
-    ( + denumire examen : evaluarea nationala,Bac, admitere facultate, examen licenta)             
+  
+    22 Examene  (clasa derivata 2)    
+    ( + denumire examen : evaluarea nationala, Bac, admitere facultate, examen licenta)             
 
-b.Cumparator(adresa livrare, nume comparator, numar telefon, email)
-Cos cumparaturi(total produse cumparate)
-Comanda : (nume produse (manual/carte),  pret total, adresa livrare, nume comparator, numar telefon, email)
+b.Cumparator(id, adresa livrare, nume comparator, numar telefon, email)
+
+c.Comanda : (id-urile produselor, pretul total, id cititor)
+
+Main class
+
+Service classes + Service-implement classes:
+
+ProdusService + ProdusServiceImpl
+ComandaService + ComandaServiceImpl
+UserService + UserServiceImpl
 
 ACTIUNI POSIBILE:
-1.Creare user =cumparator
-2.Creare comanda
-3.Adaugare produse
-4.Afisare comenzi pentru un user dat
-5.Afisare carti in functie de sectie
-6.Afisare carti in functie de sectie si sub-sectie
-7.Afisarea tuturor manualelor si culegerilor recomandate pentru un anumit nivel educational
-8.Afisarea tuturor culegerilor potrivite pentru pregatirea pentru un anumit examen/concurs
-9.Afisarea cartilor pentru copii in ordinea limitei de varsta
-10.Afisarea produselor in ordine descrescatoare/crescatoare in functie de pret
+Pentru cine se ocupa de site:
+Actiuni pe carti:
+1.Adaugare produs
+2.Adaugare produse
+3.Editare produs dupa id
+4.Stergere produs dupa id
+5.Afisare date unui produs
+6.Afisarea tuturor produselor care nu sunt in stoc
+7.Adaugare cititor
+8.Stergere cititor
+9.Adaugare comanda
+10.Stergere comanda
 
 
-**Plata se face doar la livrare,cash, nu e alta metoda de plata ^^
-**Cartile sunt mereu in stoc :))
+**Stocul scade cand apare in comanda, daca stoc = 0 atunci nu e in stoc, initial din fiecare produs sunt cate 3
+
 
 Owner: Me-Zaharia Diana-Cristiana 
-*yuh*
+
 
