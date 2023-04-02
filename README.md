@@ -11,6 +11,8 @@ Name of app : What is going on in my library?
 
 Evidenta librarie online unde sunt vandute produse de tip carte/manual, program facut pentru cel care detine libraria si vrea sa tina evidenta cumparatorilor si a comenzilor precum si a produselor(si daca sunt sau nu in stoc,cate din acelasi tip de produs sunt in stoc). 
 ...........................................................
+
+
 OBIECTE:
 
 codul e id-ul = cod unic 
