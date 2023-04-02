@@ -52,20 +52,29 @@ ComandaService + ComandaServiceImpl
 UserService + UserServiceImpl
 
 ACTIUNI POSIBILE:
-Pentru cine se ocupa de site:
-Actiuni pe carti:
-1.Adaugare un tip de produs
-2.Adaugarea mai multor tipuri de produs
-3.Editare produs dupa id //aici se poate creste stocul cand mai vin livrari
-4.Stergere produs dupa id // aici poti sterge un tip de produs cand nu se mai vinde
-5.Afisare date unui produs
-6.Afisarea tuturor produselor care nu sunt in stoc // sa stie ce trb iar aprovizionat
-7.Adaugare cititor  //evidenta clienti 
-8.Gaseste cititor dupa id
-9.Adaugare comanda
-10.Gaseste comanda dupa id
 
 
+ 1.Adaugare un tip de produs
+
+ 2.Adaugarea mai multor tipuri de produs
+
+ 3.Editare produs dupa id //aici se poate creste stocul cand mai vin livrari
+
+ 4.Stergere produs dupa id // aici poti sterge un tip de produs cand nu se mai vinde
+
+ 5.Afisare date unui produs
+
+ 6.Afisarea tuturor produselor care nu sunt in stoc // sa stie ce trb iar aprovizionat
+
+ 7.Adaugare cititor  //evidenta clienti 
+
+ 8.Gaseste cititor dupa id
+
+ 9.Adaugare comanda
+
+ 10.Gaseste comanda dupa id
+
+ 
 **Stocul scade cand apare produsul in comanda, daca stoc = 0 atunci nu e in stoc, initial din fiecare produs sunt cate 3
 
 
