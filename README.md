@@ -41,7 +41,7 @@ Dezvoltare personala: Sanatate   Terapie prin relaxare si arta  Parenting  Spiri
 
 b.Cumparator(id, adresa livrare, nume comparator, numar telefon, email)
 
-c.Comanda : (id-urile produselor, pretul total, id cititor)
+c.Comanda : (id,id-urile produselor, pretul total, id cititor)
 
 Main class
 
