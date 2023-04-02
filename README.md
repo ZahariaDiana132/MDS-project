@@ -3,6 +3,10 @@
 Proiect:
 # PAO-librarie-online
 
+
+Tema 1:
+Definire proiect:
+
 Name of library: Infinite stock 
 
 Librarie online unde sunt vandute produse de tip carte/manual, program facut pentru cumparator care alege cateva produse puse pe sectiuni bine delimitate pentru a gasi ce isi doreste cat mai eficient si isi vede totalul si istoricul comenzii si pt vanzator sa vada cat trb sa primeasca si unde trebuie sa livreze.
