@@ -18,55 +18,29 @@ OBIECTE:
 codul e id-ul = cod unic 
 a Produs (clasa baza,abstracta) : (cod,pret,editura,nume,einstoc,catesuntinstoc)
 
- 1.Carte (clasa derivata a)      (+,autor, sectiune,sub-sectiune)
+ 1.Carte (clasa derivata a)      (+autor, sectiune)
 
   Exp sectiune : Beletristica,Istorie,Psihologie,Filosofie, Dezvoltare personala 
   
 
-  Exemple sub- sectiuni : 
-  
-Beletristica: Literatura universala  Literatura romaneasca, Thriller/Politiste ,Adolescenti  Carti ecranizate Carti de dragoste  Fantezie  SF 
-
-Istorie : Religii Istorie universala  Istoria romaniei Istorie antica si medieval Biogarfie/Autobiografie
-
-Dezvoltare personala: Sanatate   Terapie prin relaxare si arta  Parenting  Spiritualitate 
-
-
-     11 Carti pt copii    (clasa derivata 1)
-    (+varsta de recomandare)
-
-     12 serii de carti  (clasa derivata 1)
-      (+numar volum)
-
- 2.Manuale (clasa derivata a)       (+materie)
-
-    21 Manuale scolare & Culegeri si caiete auxiliare (clasa derivata 2)    
-      (+ nivel educational pe clase) 
-  
-    22 Examene  (clasa derivata 2)    
-    ( + denumire examen : evaluarea nationala, Bac, admitere facultate, examen licenta)             
-
+ 2.Manual (clasa derivata a)       (+materie, clasa)
+ 
+ 
+ 3.Culegere (clasa derivata a)  (+materie, clasa)
+ 
+       
 b.Cumparator(id, adresa livrare, nume comparator, numar telefon, email)
 
 c.Comanda : (id,id-urile produselor, pretul total, id cititor)
 
-..............................................................
-
- Main class
-
-...............................................................
-
- Service classes + Service-implement classes:
- 
-
-     ProdusService + ProdusServiceImpl
- 
-     ComandaService + ComandaServiceImpl
- 
-     UserService + UserServiceImpl
+Main class
+Service class
      
+Enum: Tip produse
      
 ................................................................
+
+
 
 ACTIUNI POSIBILE:
 
@@ -81,7 +55,7 @@ ACTIUNI POSIBILE:
 
  5.Afisare date unui produs
 
- 6.Afisarea tuturor produselor care nu sunt in stoc // sa stie ce trb iar aprovizionat
+ 6.Sortare produse crescator dupa cantitatea de stoc
 
  7.Adaugare cititor  //evidenta clienti 
 
