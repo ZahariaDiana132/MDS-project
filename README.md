@@ -16,6 +16,8 @@ Evidenta librarie online unde sunt vandute produse de tip carte/manual, program 
 OBIECTE:
 
 codul e id-ul = cod unic 
+
+
 a Produs (clasa baza,abstracta) : (cod,pret,editura,nume,einstoc,catesuntinstoc)
 
  1.Carte (clasa derivata a)      (+autor, sectiune)
