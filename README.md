@@ -29,7 +29,7 @@ a Produs (clasa baza,abstracta) : (cod,pret,editura,nume,einstoc,catesuntinstoc)
        
 b.Cumparator(id, adresa livrare, nume comparator, numar telefon, email)
 
-c.Comanda : (id,id-urile produselor, pretul total, id cititor)
+c.Comanda : (id,date produse, pretul total, id cititor)
 
 Main class
 Service class
