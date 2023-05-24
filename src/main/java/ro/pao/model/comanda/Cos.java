@@ -1,6 +1,6 @@
 package ro.pao.model.comanda;
 
-import ro.pao.model.produse.Produs;
+import ro.pao.model.abstracts.Produs;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -22,7 +22,7 @@ public Cos(){id = nextId.incrementAndGet();}
     public String getProduse() {
         for (Produs i : cump)
             System.out.println(i);
-        return null;
+        return "";
     }
     public int getProdusnr(int i){return this.cump.get(i).getNr();}
 

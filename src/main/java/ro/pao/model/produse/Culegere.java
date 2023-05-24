@@ -1,5 +1,7 @@
 package ro.pao.model.produse;
 
+import ro.pao.model.abstracts.Produs;
+
 public  class Culegere extends Produs {
     private String materie;
     public Culegere(){}

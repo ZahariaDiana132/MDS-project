@@ -1,10 +1,12 @@
 package ro.pao.service.impl;
 
+import ro.pao.exceptions.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import ro.pao.application.csv.CsvReader;
 import ro.pao.application.csv.CsvWriter;
 import ro.pao.model.ExampleClass;
+import ro.pao.model.comanda.generics.cossicump;
 import ro.pao.repository.ExampleRepository;
 import ro.pao.service.ExampleService;
 import ro.pao.model.produse.*;
@@ -155,47 +157,71 @@ public class ExampleServiceImpl implements ExampleService {
          */
     }
 
-//    public static void main(String[] args) {
-//
-//
-////       testare clase:
-//
-//        Culegere myobj= new Culegere();
-//        Manual myobj1= new Manual();
-//        Carte mycarte = new Carte();
-//        mycarte.setAutor("Diana");
-//        mycarte.setPret(2);
-//        myobj.setPret(10);
-//        myobj1.setPret(5);
-//        ArrayList<Produs> cumparat = new ArrayList<>();
-//        cumparat.add(myobj);
-//        cumparat.add(myobj1);
-//        Cos trei = new Cos();
-//        trei.setProduse(myobj);
-//        trei.setProduse(myobj1);
-//        trei.setProduse(mycarte);
-//        trei.getProduse();
-//        Carte mycarte2= new Carte("Calin","Cash","bine pe cash","da","paralela",20);
-//        trei.setProduse(mycarte2);
+    public static void main(String[] args) {
+
+
+//       testare clase:
+
+        Culegere myobj= new Culegere();
+        Manual myobj1= new Manual();
+        Carte mycarte = new Carte();
+        mycarte.setAutor("Diana");
+        mycarte.setPret(2);
+        myobj.setPret(10);
+        myobj1.setPret(5);
+        Cos trei = new Cos();
+        trei.setProduse(myobj);
+        trei.setProduse(myobj1);
+        trei.setProduse(mycarte);
+        //trei.getProduse();
+        Carte mycarte2= new Carte("Calin","Cash","bine pe cash","da","paralela",20);
+        trei.setProduse(mycarte2);
 //        System.out.println(trei.getProdusnr(0));
 //        System.out.println(trei.getProdusnr(1));
 //        System.out.println(trei.getProdusnr(2));
 //        System.out.println(trei.getProdusnr(3));
 //        System.out.println(mycarte2);
-//        //System.out.println(trei);
-//        Cos unu= new Cos();
-//        Cos doi= new Cos();
-//        unu.setTotal(myobj);
-//        unu.setTotal(myobj1);
-//        doi.setTotal(myobj);
-//        Cumparator cum= new Cumparator();
-//        Cumparator cum2= new Cumparator("a","b","c","d");
-////        System.out.println(cum);
-////        System.out.println(cum2);
-////        System.out.println(cum.getId());
-////        System.out.println(cum2.getId());
-////        System.out.println(doi);
-////        System.out.println(unu);
-//
-//}
+        //System.out.println(trei);
+        Cos unu= new Cos();
+        Cos doi= new Cos();
+        unu.setProduse(myobj);
+        unu.setProduse(myobj1);
+        doi.setProduse(myobj);
+        Client cum= new Client();
+        Firma f= new Firma(1234,"da");
+        Client cum2= new Client("a","b","c","d");
+        cossicump c = new cossicump(unu,cum2);
+        cossicump c2 = new cossicump(trei,f);
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+       Inputincorect w = new Inputincorect<>();
+        try
+        {
+            // call method checkEligibility() to check whether the user is eligible for exam or not
+            w.checkEligibility(trei);
+        }
+        catch (wrongcomandaimput exception)
+        {
+            System.out.println("We found an exception:");
+
+            // printing the message from InvalidAgeException object
+            System.out.println(exception);
+
+        }
+    }
+    // cossicump c4 = new cossicump(trei,unu); //eroare pt ca am pus sealed pt valoarea generica sa accepte doar cumparatori,
+                                                  //altfel afisa cele 2 cosuri
+       // System.out.println(f);
+       //System.out.println(c);
+        //System.out.println(c2);
+       // if(f.getClass().equals(Firma.class))
+       // System.out.println("da");
+        //System.out.println(c4);
+//        System.out.println(cum);
+//         System.out.println(cum2);
+//        System.out.println(cum.getId());
+//        System.out.println(cum2.getId());
+         // System.out.println(doi);
+         // System.out.println(unu);
+
 }
+

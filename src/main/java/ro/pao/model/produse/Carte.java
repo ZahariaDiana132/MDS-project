@@ -1,9 +1,10 @@
 package ro.pao.model.produse;
+import ro.pao.model.abstracts.Produs;
 
 public class Carte extends Produs {
     private String autor,sect,subsect;
 
-    public Carte(){}
+    public Carte(){ }
     public Carte(String autor,String sect,String subsect,String nume,String editura, double pret)
     {this.autor=autor;
      this.sect=sect;
