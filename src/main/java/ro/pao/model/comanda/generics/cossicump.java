@@ -36,7 +36,7 @@ public class cossicump<T extends Cos,R extends Sealedforcump >{
     @Override
     public String toString()
     {
-        return "Comanda cu nr: "+ this.id + "\nDetalii:\n" +"  Cumparator: " +this.cumparator + "\n  In valoare de: " + this.produse.getTotal();
+        return "Comanda cu nr: "+ this.id + "\nDetalii:\n" +"  Cumparator: " +this.cumparator + "\n  In valoare de: " + this.produse.getTotal() + "\n cu produsele: "+ this.produse.getCump();
 
     }
 

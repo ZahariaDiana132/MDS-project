@@ -23,9 +23,9 @@ public class Carte extends Produs {
     @Override
     public String toString()
     {
-        return "Cartea scrisa de " + this.autor + " cu numele: " + this.getNume() + " sectia: " + this.sect+
+        return "\nCartea scrisa de " + this.autor + " cu numele: " + this.getNume() + " sectia: " + this.sect+
                 " sub-sectia: "+ this.subsect + "  editura: " + this.getEditura() + "\n nr produsului: "
-                + this.getNr()+ "\n Pret: " + this.getPret() + " lei";
+                + this.getNr()+ "\n Pret: " + this.getPret() + " lei\n";
     }
 
 }

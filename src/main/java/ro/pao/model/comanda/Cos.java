@@ -29,7 +29,10 @@ public Cos(){id = nextId.incrementAndGet();}
     @Override
     public String toString()
     {
-        return  "Pretul total este: " + this.total + "\n produsele sunt:" + this.getProduse();
+        return  "Pretul total este: " + this.total + "\n produsele sunt: \n" + this.cump;
 
+    }
+    public ArrayList<Produs> getCump() {
+        return cump;
     }
 }

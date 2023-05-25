@@ -6,21 +6,24 @@ public abstract class Produs {
 
     static AtomicInteger nextId = new AtomicInteger();
     private int nr;
-    private String nume,editura;
+    private String nume,editura,autor;
     private double pret;
 
 
  public Produs(){nr = nextId.incrementAndGet();}
 
- public Produs(String nume,String editura,double pret)
+ public Produs(String nume,String editura,double pret,String autor)
  {
      this.nume = nume;
      this.editura=editura;
      this.pret = pret;
+     this.autor=autor;
 
 
  }
 
+    public String getAutor(){return this.autor;}
+    public void setAutor(String autor){this.autor = autor;}
     public String getNume(){return this.nume;}
     public void setNume(String nume){this.nume = nume;}
 

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import ro.pao.application.csv.CsvReader;
 import ro.pao.application.csv.CsvWriter;
+import ro.pao.exceptions.generic.Alreadythere;
+import ro.pao.exceptions.generic.Inputincorect;
 import ro.pao.model.ExampleClass;
 import ro.pao.model.comanda.generics.cossicump;
 import ro.pao.repository.ExampleRepository;
@@ -65,7 +67,9 @@ public class ExampleServiceImpl implements ExampleService {
         exampleRepository.updateObjectById(id, newElement);
     }
 
-    /** Method example that reads employees from csv */
+    /**
+     * Method example that reads employees from csv
+     */
     /*
     This code will print the contents of the CSV file to the console in two different formats:
     allLines: a list of arrays, where each array represents a row in the CSV file.
@@ -104,14 +108,16 @@ public class ExampleServiceImpl implements ExampleService {
         }
     }
 
-    /** Method example that writes employees to csv */
+    /**
+     * Method example that writes employees to csv
+     */
     private void writeToCsv(List<ExampleClass> exampleClassList) throws Exception {
         // Suppose you have a list of String[] arrays representing rows in a CSV file, like this:
         List<String[]> lines = new ArrayList<>();
-        lines.add(new String[] {"id", "name", "age"});
-        lines.add(new String[] {"1", "John Doe", "35"});
-        lines.add(new String[] {"2", "Jane Doe", "30"});
-        lines.add(new String[] {"3", "Bob Smith", "45"});
+        lines.add(new String[]{"id", "name", "age"});
+        lines.add(new String[]{"1", "John Doe", "35"});
+        lines.add(new String[]{"2", "Jane Doe", "30"});
+        lines.add(new String[]{"3", "Bob Smith", "45"});
 
         // To write this data to a CSV file using CsvWriter, you can write the following code:
 
@@ -125,7 +131,6 @@ public class ExampleServiceImpl implements ExampleService {
             String lineByLineContents = csvWriter.writeLineByLine(lines, lineByLinePath);
             System.out.println("Contents of line_by_line.csv:");
             System.out.println(lineByLineContents);
-
 
 
             // Write all lines at once
@@ -162,8 +167,8 @@ public class ExampleServiceImpl implements ExampleService {
 
 //       testare clase:
 
-        Culegere myobj= new Culegere();
-        Manual myobj1= new Manual();
+        Culegere myobj = new Culegere();
+        Manual myobj1 = new Manual();
         Carte mycarte = new Carte();
         mycarte.setAutor("Diana");
         mycarte.setPret(2);
@@ -174,7 +179,7 @@ public class ExampleServiceImpl implements ExampleService {
         trei.setProduse(myobj1);
         trei.setProduse(mycarte);
         //trei.getProduse();
-        Carte mycarte2= new Carte("Calin","Cash","bine pe cash","da","paralela",20);
+        Carte mycarte2 = new Carte("Calin", "Cash", "bine pe cash", "da", "paralela", 20);
         trei.setProduse(mycarte2);
 //        System.out.println(trei.getProdusnr(0));
 //        System.out.println(trei.getProdusnr(1));
@@ -182,46 +187,59 @@ public class ExampleServiceImpl implements ExampleService {
 //        System.out.println(trei.getProdusnr(3));
 //        System.out.println(mycarte2);
         //System.out.println(trei);
-        Cos unu= new Cos();
-        Cos doi= new Cos();
+        Cos unu = new Cos();
+        Cos doi = new Cos();
         unu.setProduse(myobj);
         unu.setProduse(myobj1);
         doi.setProduse(myobj);
-        Client cum= new Client();
-        Firma f= new Firma(1234,"da");
-        Client cum2= new Client("a","b","c","d");
-        cossicump c = new cossicump(unu,cum2);
-        cossicump c2 = new cossicump(trei,f);
+        Client cum = new Client();
+        Firma f = new Firma(1234, "da");
+        Client cum2 = new Client("a", "b", "c", "d");
+        cossicump c = new cossicump(unu, cum2);
+        cossicump c2 = new cossicump(trei, f);
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-       Inputincorect w = new Inputincorect<>();
-        try
-        {
-            // call method checkEligibility() to check whether the user is eligible for exam or not
+        Inputincorect w = new Inputincorect<>();
+        try {
+
             w.checkEligibility(trei);
-        }
-        catch (wrongcomandaimput exception)
-        {
+        } catch (wrongcomandaimput exception) {
             System.out.println("We found an exception:");
 
-            // printing the message from InvalidAgeException object
+
             System.out.println(exception);
 
         }
-    }
+        String nm="da",au="Calin",ed="paralela";
+
+
+        Alreadythere a = new Alreadythere();
+        try {
+            // call method checkEligibility() to check whether the user is eligible for exam or not
+            a.checkEligibility(nm,au,ed,unu.getCump());
+        } catch (sameproducttwice exception) {
+            System.out.println("We found an exception:");
+
+
+            System.out.println(exception);
+
+        }
+
+
+
     // cossicump c4 = new cossicump(trei,unu); //eroare pt ca am pus sealed pt valoarea generica sa accepte doar cumparatori,
-                                                  //altfel afisa cele 2 cosuri
-       // System.out.println(f);
-       //System.out.println(c);
-        //System.out.println(c2);
-       // if(f.getClass().equals(Firma.class))
-       // System.out.println("da");
-        //System.out.println(c4);
+    //altfel afisa cele 2 cosuri
+    // System.out.println(f);
+     //System.out.println(c);
+    //System.out.println(c2);
+    // if(f.getClass().equals(Firma.class))
+    // System.out.println("da");
+    //System.out.println(c4);
 //        System.out.println(cum);
 //         System.out.println(cum2);
 //        System.out.println(cum.getId());
 //        System.out.println(cum2.getId());
-         // System.out.println(doi);
-         // System.out.println(unu);
-
+    // System.out.println(doi);
+    // System.out.println(unu);
+}
 }
 
