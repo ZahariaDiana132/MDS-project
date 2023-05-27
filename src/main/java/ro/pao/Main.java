@@ -1,6 +1,5 @@
 package ro.pao;
 
-import ro.pao.application.Menu;
 import ro.pao.exceptions.generic.Alreadythere;
 import ro.pao.exceptions.generic.Inputincorect;
 import ro.pao.exceptions.sameproducttwice;
@@ -14,26 +13,17 @@ import ro.pao.model.designpatterndecorator.Discount;
 import ro.pao.model.produse.Carte;
 import ro.pao.model.produse.Culegere;
 import ro.pao.model.produse.Manual;
+import ro.pao.service.impl.CarteService;
 import ro.pao.service.impl.ClientService;
+import ro.pao.service.impl.CosService;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-//
-//        while (true) {
-//            Menu menu = Menu.getInstance();
-//
-//            menu.intro();
-//
-//            if ("exit".equals(scanner.next())) {
-//                break;
-//            }
-//        }
-
-        //       testare clase:
+        //testare clase:
 
         Culegere myobj = new Culegere();
         Manual myobj1 = new Manual();
@@ -100,6 +90,20 @@ public class Main {
         discCarte.disc(0.2);
 
         ClientService clientService = new ClientService();
+        // cossicump c4 = new cossicump(trei,unu); //eroare pt ca am pus sealed pt valoarea generica sa accepte doar cumparatori,
+        //altfel afisa cele 2 cosuri
+        // System.out.println(f);
+        //System.out.println(c);
+        //System.out.println(c2);
+        // if(f.getClass().equals(Firma.class))
+        // System.out.println("da");
+        //System.out.println(c4);
+//        System.out.println(cum);
+//         System.out.println(cum2);
+//        System.out.println(cum.getId());
+//        System.out.println(cum2.getId());
+        // System.out.println(doi);
+        // System.out.println(unu);
 
 //        // Create a new client
 //        Client client1 = new Client();
@@ -147,21 +151,56 @@ public class Main {
             System.out.println("Failed to delete client with ID " + deleteClientId);
         }
 
+        CosService cosService = new CosService();
+        int cosId = cosService.createCos();
+        System.out.println("Cos created with ID: " + cosId);
 
-        // cossicump c4 = new cossicump(trei,unu); //eroare pt ca am pus sealed pt valoarea generica sa accepte doar cumparatori,
-        //altfel afisa cele 2 cosuri
-        // System.out.println(f);
-        //System.out.println(c);
-        //System.out.println(c2);
-        // if(f.getClass().equals(Firma.class))
-        // System.out.println("da");
-        //System.out.println(c4);
-//        System.out.println(cum);
-//         System.out.println(cum2);
-//        System.out.println(cum.getId());
-//        System.out.println(cum2.getId());
-        // System.out.println(doi);
-        // System.out.println(unu);
+        CarteService produsService = new CarteService();
+        Carte produs1 = new Carte();
+        produs1.setAutor("John ");
+        produs1.setSect("Ssection");
+        produs1.setSubsect("Subssection");
+        produs1.setNume("Produs");
+        produs1.setEditura("Publis");
+        produs1.setPret(9.99);
+        produs1.setNr(produs1.getNr());
+        produs1.setCosid(cosId);
+        produsService.createProdus(produs1,cosId);
+        System.out.println("Carte created.");
+
+
+        Carte produs11 = new Carte();
+        produs11.setAutor("Doe");
+        produs11.setSect("Section");
+        produs11.setSubsect("Subsection");
+        produs11.setNume("Product 1");
+        produs11.setEditura("Puber");
+        produs11.setPret(10.8);
+        produs11.setNr(produs11.getNr());
+        produs11.setCosid(cosId);
+        produsService.createProdus(produs11,cosId);
+        System.out.println("Carte created.");
+
+        // Get all Carte objects for a Cos
+        List<Carte> produsList = produsService.getAllProdusByCosId(cosId);
+        System.out.println("Carte objects for Cos with ID " + cosId + ":");
+        for (Carte produs : produsList) {
+            System.out.println(produs);
+        }
+
+        // Update a Carte
+        Carte produsToUpdate = produsList.get(1);
+        produsToUpdate.setPret(20.09);
+        produsService.updateProdus(produsToUpdate);
+        System.out.println("Carte updated: " + produsToUpdate);
+
+        // Delete a Carte
+        Carte produsToDelete = produsList.get(0);
+        produsService.deleteProdus(produsToDelete.getId());
+        System.out.println("Carte deleted: " + produsToDelete);
+
     }
+
 }
+
 

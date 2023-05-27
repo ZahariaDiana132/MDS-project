@@ -41,4 +41,10 @@ public abstract class Produs  {
         return "Proudusul: " + this.nume + "cu nr:"+this.nr+", editura " + this.editura + "\nPretul: " + this.pret + " lei" ;
     }
 
+    public void setNr(int nr) {
+     this.nr=nr;
+    }
+
+    public void setId(int nr){this.nr=nr;}
+    public int getId(){return nr;}
 }

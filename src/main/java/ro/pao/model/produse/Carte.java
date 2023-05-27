@@ -2,9 +2,11 @@ package ro.pao.model.produse;
 import ro.pao.model.abstracts.Produs;
 import ro.pao.model.designpatterndecorator.Arepret;
 
+//singurul produs pe care il retin in baza de date
 public class Carte extends Produs implements Arepret {
     private String autor,sect,subsect;
 
+    private int cosid;
     public Carte(){ }
     public Carte(String autor,String sect,String subsect,String nume,String editura, double pret)
     {this.autor=autor;
@@ -38,5 +40,13 @@ public class Carte extends Produs implements Arepret {
     @Override
     public double getPpret() {
         return getPret();
+    }
+
+    public void setCosid(int cosid) {
+        this.cosid = cosid;
+    }
+
+    public int getCosid() {
+        return cosid;
     }
 }

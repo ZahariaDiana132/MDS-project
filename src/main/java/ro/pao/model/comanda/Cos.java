@@ -35,4 +35,12 @@ public Cos(){id = nextId.incrementAndGet();}
     public ArrayList<Produs> getCump() {
         return cump;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
 }
