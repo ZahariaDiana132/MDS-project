@@ -1,8 +1,9 @@
 package ro.pao.model.produse;
 
 import ro.pao.model.abstracts.Produs;
+import ro.pao.model.designpatterndecorator.Arepret;
 
-public  class Culegere extends Produs {
+public  class Culegere extends Produs implements Arepret {
     private String materie;
     public Culegere(){}
     public Culegere(String materie,String nume,String editura, double pret,String autor)
@@ -21,5 +22,15 @@ public  class Culegere extends Produs {
     {
         return "\nCulegere: " + this.getNume() + ", editura " + this.getEditura() + " materia: "
                 + this.materie+ "\n nr produsului: " + this.getNr()+" \n Pretul: " + this.getPret() + " lei\n";
+    }
+    @Override
+    public void disc(double a)
+    {
+
+        System.out.println("\n Pretul fara un discount: " + this.getPret());
+
+    }
+    public double getPpret() {
+        return getPret();
     }
 }

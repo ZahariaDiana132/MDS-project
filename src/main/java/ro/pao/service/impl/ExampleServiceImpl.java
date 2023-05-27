@@ -9,6 +9,8 @@ import ro.pao.exceptions.generic.Alreadythere;
 import ro.pao.exceptions.generic.Inputincorect;
 import ro.pao.model.ExampleClass;
 import ro.pao.model.comanda.generics.cossicump;
+import ro.pao.model.designpatterndecorator.Arepret;
+import ro.pao.model.designpatterndecorator.Discount;
 import ro.pao.repository.ExampleRepository;
 import ro.pao.service.ExampleService;
 import ro.pao.model.produse.*;
@@ -224,6 +226,12 @@ public class ExampleServiceImpl implements ExampleService {
 
         }
 
+        Arepret carte= new Carte("Diana", "frumos","foarte", "Poezie","buna",10);
+        Carte al =new Carte("iana", "frum","arte", "Poe","buna",20);
+        Arepret discCarte = new Discount(al, al.getPret());
+
+        carte.disc(0.3);
+        discCarte.disc(0.2);
 
 
     // cossicump c4 = new cossicump(trei,unu); //eroare pt ca am pus sealed pt valoarea generica sa accepte doar cumparatori,

@@ -1,7 +1,8 @@
 package ro.pao.model.produse;
 import ro.pao.model.abstracts.Produs;
+import ro.pao.model.designpatterndecorator.Arepret;
 
-public class Carte extends Produs {
+public class Carte extends Produs implements Arepret {
     private String autor,sect,subsect;
 
     public Carte(){ }
@@ -28,4 +29,14 @@ public class Carte extends Produs {
                 + this.getNr()+ "\n Pret: " + this.getPret() + " lei\n";
     }
 
+    public void disc(double a)
+    {
+
+        System.out.println("\n Pretul fara un discount: " + this.getPret());
+
+    }
+    @Override
+    public double getPpret() {
+        return getPret();
+    }
 }

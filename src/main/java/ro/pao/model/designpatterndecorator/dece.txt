@@ -1,0 +1,1 @@
+am facut acest design pattern structural : decoratorul, pentru a putea introduce in baza de date a unei comenzi o carte la un pret mai mic decat cel uzual fara a modifica baza de date;

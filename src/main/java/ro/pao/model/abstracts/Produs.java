@@ -1,8 +1,10 @@
 package ro.pao.model.abstracts;
 
 import java.util.concurrent.atomic.AtomicInteger;
+
+import ro.pao.model.designpatterndecorator.Arepret;
 import ro.pao.model.enums.tipuriproduse;
-public abstract class Produs {
+public abstract class Produs  {
 
     static AtomicInteger nextId = new AtomicInteger();
     private int nr;
