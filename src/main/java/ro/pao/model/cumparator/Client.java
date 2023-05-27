@@ -36,4 +36,7 @@ public non-sealed class Client extends Sealedforcump {
                 + this.adresa + " si telefonul " + this.telefon;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }
