@@ -1,4 +1,5 @@
 package ro.pao.service.impl;
+import ro.pao.application.csv.ClientActionLogger;
 import ro.pao.model.cumparator.Client;
 import ro.pao.repository.impl.ClientRepository;
 import java.sql.PreparedStatement;
@@ -7,9 +8,11 @@ import java.sql.SQLException;
 
 public class ClientService {
     private ClientRepository clientRepository;
+    private ClientActionLogger actionLogger;
 
     public ClientService() {
         clientRepository = new ClientRepository();
+        actionLogger = new ClientActionLogger();
     }
 
     public void createClient(Client client) {
@@ -26,6 +29,7 @@ public class ClientService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        actionLogger.logAction("createClient");
     }
     public Client getClientById(int clientId) {
         String sql = "SELECT * FROM clients WHERE id = ?";
@@ -51,7 +55,7 @@ public class ClientService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("getClientById");
         return client;
     }
 
@@ -71,6 +75,7 @@ public class ClientService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        actionLogger.logAction("updateClient");
     }
 
     public boolean deleteClient(int clientId) {
@@ -87,10 +92,9 @@ public class ClientService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("deleteClient");
         return false;
     }
 
 
 }
-

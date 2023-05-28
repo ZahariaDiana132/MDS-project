@@ -40,4 +40,11 @@ public class cossicump<T extends Cos,R extends Sealedforcump >{
 
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

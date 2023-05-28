@@ -70,6 +70,38 @@ public class CarteService {
         return produse;
     }
 
+//get all carti
+    public ArrayList<Carte> getAllProdus() {
+        ArrayList<Carte> produsList = new ArrayList<>();
+        String sql = "SELECT * FROM produs";
+
+        try {
+            PreparedStatement statement = produsRepository.getConnection().prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                Carte produs = new Carte();
+                produs.setId(resultSet.getInt("id"));
+                produs.setAutor(resultSet.getString("autor"));
+                produs.setSect(resultSet.getString("sect"));
+                produs.setSubsect(resultSet.getString("subsect"));
+                produs.setNume(resultSet.getString("nume"));
+                produs.setEditura(resultSet.getString("editura"));
+                produs.setPret(resultSet.getDouble("pret"));
+                produs.setNr(resultSet.getInt("nr"));
+
+                produsList.add(produs);
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return produsList;
+    }
+
     public void updateProdus(Carte produs) {
         String sql = "UPDATE produs SET autor = ?, sect = ?, subsect = ?, nume = ?, editura = ?, pret = ?, nr = ? WHERE id = ?";
 

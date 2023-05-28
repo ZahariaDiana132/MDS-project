@@ -43,4 +43,8 @@ public Cos(){id = nextId.incrementAndGet();}
     public void setTotal(double total) {
         this.total = total;
     }
+
+    public int getId() {
+        return id;
+    }
 }

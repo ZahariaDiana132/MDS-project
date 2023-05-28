@@ -1,0 +1,30 @@
+CREATE TABLE clients (
+                        id SERIAL PRIMARY KEY,
+                        prnume VARCHAR(255),
+                        email VARCHAR(255),
+                        adresa VARCHAR(255),
+                        telefon VARCHAR(255)
+);
+CREATE TABLE cos (
+                     id SERIAL PRIMARY KEY,
+                     total DOUBLE PRECISION
+);
+
+CREATE TABLE produs (
+                        id SERIAL PRIMARY KEY,
+                        autor VARCHAR(255),
+                        sect VARCHAR(255),
+                        subsect VARCHAR(255),
+                        nume VARCHAR(255),
+                        editura VARCHAR(255),
+                        pret DOUBLE PRECISION,
+                        nr INTEGER,
+                        cos_id INTEGER REFERENCES cos(id)
+);
+
+CREATE TABLE cossicumpbd (
+                             id SERIAL PRIMARY KEY,
+                             cumparatorid INT references clients(id),
+                             cosid INT references cos(id)
+);
+
