@@ -1,5 +1,6 @@
 package ro.pao.service.impl;
 
+import ro.pao.application.csv.ClientActionLogger;
 import ro.pao.model.comanda.Cos;
 import ro.pao.repository.impl.CarteRepository;
 import ro.pao.repository.impl.CosRepository;
@@ -13,10 +14,12 @@ import java.util.List;
 public class CosService {
     private CosRepository cosRepository;
     private CarteRepository produsRepository;
+    private ClientActionLogger actionLogger;
 
     public CosService() {
         cosRepository = new CosRepository();
         produsRepository = new CarteRepository();
+        actionLogger = new ClientActionLogger();
     }
 
     public int createCos() {
@@ -39,7 +42,7 @@ public class CosService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("createcos");
         return cosId;
     }
 
@@ -64,7 +67,7 @@ public class CosService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("getcosById");
         return cos;
     }
 
@@ -81,6 +84,7 @@ public class CosService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        actionLogger.logAction("updatecostotal");
     }
 
     public boolean deleteCos(int cosId) {
@@ -98,6 +102,7 @@ public class CosService {
             e.printStackTrace();
         }
 
+        actionLogger.logAction("deletecos");
         return false;
     }
 

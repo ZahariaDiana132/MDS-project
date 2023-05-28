@@ -1,5 +1,6 @@
 package ro.pao.service.impl;
 
+import ro.pao.application.csv.ClientActionLogger;
 import ro.pao.model.comanda.generics.cossicumpbd;
 import ro.pao.repository.impl.CossicumpRepository;
 import java.sql.PreparedStatement;
@@ -10,8 +11,9 @@ import java.util.List;
 
 public class CossicumpbdService {
     private CossicumpRepository cossicumpbdRepository;
-
+    private ClientActionLogger actionLogger;
     public CossicumpbdService() {
+        actionLogger = new ClientActionLogger();
         cossicumpbdRepository = new CossicumpRepository();
     }
 
@@ -36,7 +38,7 @@ public class CossicumpbdService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("createComanda");
         return cossicumpbdId;
     }
 
@@ -62,7 +64,7 @@ public class CossicumpbdService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("getcomandabyid");
         return cossicumpbd;
     }
 
@@ -89,26 +91,11 @@ public class CossicumpbdService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("getallcomenzi");
         return cossicumpbdList;
     }
 
-    public void updateCossicumpbd(cossicumpbd cossicumpbd) {
-        String sql = "UPDATE cossicumpbd SET cumparatorid = ?, cosid = ? WHERE id = ?";
 
-        try {
-            PreparedStatement statement = cossicumpbdRepository.getConnection().prepareStatement(sql);
-            statement.setInt(1, cossicumpbd.getCumparatorId());
-            statement.setInt(2, cossicumpbd.getCosId());
-            statement.setInt(3, cossicumpbd.getId());
-
-            statement.executeUpdate();
-
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     public void deleteCossicumpbd(int cossicumpbdId) {
         String sql = "DELETE FROM cossicumpbd WHERE id = ?";
@@ -123,8 +110,9 @@ public class CossicumpbdService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        actionLogger.logAction("deletecomanda");
     }
 
-    // Other methods as per your requirements
+
 }
 

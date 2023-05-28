@@ -1,5 +1,6 @@
 package ro.pao.service.impl;
 
+import ro.pao.application.csv.ClientActionLogger;
 import ro.pao.model.produse.Carte;
 import ro.pao.repository.impl.CarteRepository;
 
@@ -11,9 +12,11 @@ import java.util.List;
 
 public class CarteService {
     private CarteRepository produsRepository;
+    private ClientActionLogger actionLogger;
 
     public CarteService() {
         produsRepository = new CarteRepository();
+        actionLogger = new ClientActionLogger();
     }
 
     public void createProdus(Carte produs, int cosId) {
@@ -35,40 +38,9 @@ public class CarteService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        actionLogger.logAction("createCarte");
     }
 
-    public List<Carte> getProduseByCosId(int cosId) {
-        String sql = "SELECT * FROM produs WHERE cos_id = ?";
-        List<Carte> produse = new ArrayList<>();
-
-        try {
-            PreparedStatement statement = produsRepository.getConnection().prepareStatement(sql);
-            statement.setInt(1, cosId);
-
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                Carte produs = new Carte();
-                produs.setId(resultSet.getInt("id"));
-                produs.setAutor(resultSet.getString("autor"));
-                produs.setSect(resultSet.getString("sect"));
-                produs.setSubsect(resultSet.getString("subsect"));
-                produs.setNume(resultSet.getString("nume"));
-                produs.setEditura(resultSet.getString("editura"));
-                produs.setPret(resultSet.getDouble("pret"));
-                produs.setNr(resultSet.getInt("nr"));
-
-                produse.add(produs);
-            }
-
-            resultSet.close();
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return produse;
-    }
 
 //get all carti
     public ArrayList<Carte> getAllProdus() {
@@ -98,7 +70,7 @@ public class CarteService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("getallproduse");
         return produsList;
     }
 
@@ -121,6 +93,7 @@ public class CarteService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        actionLogger.logAction("updateprodus");
     }
 
     public boolean deleteProdus(int produsId) {
@@ -137,7 +110,7 @@ public class CarteService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("deleteprodus");
         return false;
     }
 
@@ -171,7 +144,7 @@ public class CarteService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("getallprodbycosid");
         return produsList;
     }
 }
