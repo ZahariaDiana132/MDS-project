@@ -6,6 +6,6 @@ Să se realizeze servicii care sa expună operații de tip create, read, update 
 
 ## Realizarea unui serviciu de audit
 
-Se va realiza un serviciu care sa scrie într-un fișier de tip CSV de fiecare data când este executată una dintre acțiunile descrise în prima etapa.
+Se va realiza un serviciu care sa scrie într-un fișier de tip CSV când este executată una dintre acțiunile descrise în prima etapa.
 
 Structura fișierului: nume_actiune, timestamp.
