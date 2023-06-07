@@ -1,6 +1,6 @@
 <<<<<<< tema1
 
-Tema 1:
+
 Definire proiect:
 
 Name of app : What is going on in my library?
