@@ -87,6 +87,7 @@ public class CarteService {
             statement.setString(5, produs.getEditura());
             statement.setDouble(6, produs.getPret());
             statement.setInt(7, produs.getNr());
+            statement.setInt(8, produs.getId()); // Set the ID value for the WHERE clause
 
 
             statement.executeUpdate();
@@ -115,39 +116,39 @@ public class CarteService {
         return false;
     }
 
-    public List<Carte> getAllProdusByCosId(int cosId) {
-        String sql = "SELECT * FROM produs WHERE cos_id = ?";
-        List<Carte> produsList = new ArrayList<>();
-
-        try {
-            PreparedStatement statement = produsRepository.getConnection().prepareStatement(sql);
-            statement.setInt(1, cosId);
-
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                Carte produs = new Carte();
-                produs.setId(resultSet.getInt("id"));
-                produs.setAutor(resultSet.getString("autor"));
-                produs.setSect(resultSet.getString("sect"));
-                produs.setSubsect(resultSet.getString("subsect"));
-                produs.setNume(resultSet.getString("nume"));
-                produs.setEditura(resultSet.getString("editura"));
-                produs.setPret(resultSet.getDouble("pret"));
-                produs.setNr(resultSet.getInt("nr"));
-                produs.setCosid(resultSet.getInt("cos_id"));
-
-                produsList.add(produs);
-            }
-
-            resultSet.close();
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        actionLogger.logAction("getallprodbycosid");
-        return produsList;
-    }
+//    public List<Carte> getAllProdusByCosId(int cosId) {
+//        String sql = "SELECT * FROM produs WHERE cos_id = ?";
+//        List<Carte> produsList = new ArrayList<>();
+//
+//        try {
+//            PreparedStatement statement = produsRepository.getConnection().prepareStatement(sql);
+//            statement.setInt(1, cosId);
+//
+//            ResultSet resultSet = statement.executeQuery();
+//
+//            while (resultSet.next()) {
+//                Carte produs = new Carte();
+//                produs.setId(resultSet.getInt("id"));
+//                produs.setAutor(resultSet.getString("autor"));
+//                produs.setSect(resultSet.getString("sect"));
+//                produs.setSubsect(resultSet.getString("subsect"));
+//                produs.setNume(resultSet.getString("nume"));
+//                produs.setEditura(resultSet.getString("editura"));
+//                produs.setPret(resultSet.getDouble("pret"));
+//                produs.setNr(resultSet.getInt("nr"));
+//                produs.setCosid(resultSet.getInt("cos_id"));
+//
+//                produsList.add(produs);
+//            }
+//
+//            resultSet.close();
+//            statement.close();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        actionLogger.logAction("getallprodbycosid");
+//        return produsList;
+//    }
 
     public Carte getProdusById(int produsId) {
         String sql = "SELECT * FROM produs WHERE id = ?";
@@ -169,7 +170,7 @@ public class CarteService {
                 produs.setEditura(resultSet.getString("editura"));
                 produs.setPret(resultSet.getDouble("pret"));
                 produs.setNr(resultSet.getInt("nr"));
-                produs.setCosid(resultSet.getInt("cos_id"));
+
             }
 
             resultSet.close();

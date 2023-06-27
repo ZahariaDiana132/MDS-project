@@ -65,7 +65,7 @@ public class Main {
             System.out.println("1. Create a client");
             System.out.println("2. Retrieve a client by ID");
             System.out.println("3. Update a client");
-            System.out.println("4. Delete a client");
+            System.out.println("4. See a cute text");
             System.out.println("5. Create a produs");
             System.out.println("6. Update a produs");
             System.out.println("7. Delete a produs");
@@ -88,7 +88,7 @@ public class Main {
                     updateClient(clientService, scanner);
                     break;
                 case 4:
-                    deleteClient(clientService, scanner);
+                    System.out.print("You got this!");
                     break;
                 case 5:
                     createProdus(produsService, cosService, scanner);
