@@ -19,11 +19,12 @@ public class CarteService {
         actionLogger = new ClientActionLogger();
     }
 
-    public void createProdus(Carte produs, int cosId) {
-        String sql = "INSERT INTO produs (autor, sect, subsect, nume, editura, pret, nr, cos_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    public void createProdus(Carte produs) {
+        String sql = "INSERT INTO produs (autor, sect, subsect, nume, editura, pret, nr) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement statement = produsRepository.getConnection().prepareStatement(sql);
+
             statement.setString(1, produs.getAutor());
             statement.setString(2, produs.getSect());
             statement.setString(3, produs.getSubsect());
@@ -31,7 +32,7 @@ public class CarteService {
             statement.setString(5, produs.getEditura());
             statement.setDouble(6, produs.getPret());
             statement.setInt(7, produs.getNr());
-            statement.setInt(8, cosId);
+
 
             statement.executeUpdate();
             statement.close();
@@ -86,7 +87,7 @@ public class CarteService {
             statement.setString(5, produs.getEditura());
             statement.setDouble(6, produs.getPret());
             statement.setInt(7, produs.getNr());
-            statement.setInt(8, produs.getId());
+
 
             statement.executeUpdate();
             statement.close();
@@ -176,7 +177,7 @@ public class CarteService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        actionLogger.logAction("getprodusbyid");
         return produs;
     }
 

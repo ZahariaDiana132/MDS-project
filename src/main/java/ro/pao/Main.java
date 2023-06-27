@@ -52,6 +52,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        ClientActionLogger cl = new ClientActionLogger();
+        cl.initializeLogFile();
         ClientService clientService = new ClientService();
         CarteService produsService = new CarteService();
         CosService cosService = new CosService();
@@ -214,10 +216,6 @@ public class Main {
         System.out.print("Enter produs pret: ");
         Double pret = Double.parseDouble(scanner.next());
 
-        System.out.print("Enter cos id ");
-        int cos_id = Integer.parseInt(scanner.next());
-
-
         Carte produs = new Carte();
         produs.setNume(name);
         produs.setAutor(author);
@@ -227,7 +225,7 @@ public class Main {
         produs.setPret(pret);
         produs.setCosid(-1);
         produs.getCosid();
-
+        produsService.createProdus(produs);
         System.out.println("Produs created successfully.");
     }
 

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ClientActionLogger {
-    private static final String CSV_FILE_PATH = "C:\\Users\\diana\\IdeaProjects\\PAOtm2\\clienti.csv";
+    private static final String CSV_FILE_PATH = "C:\\Users\\diana\\IdeaProjects\\MDS-project\\clienti.csv";
     private static final String CSV_HEADER = "Action,Time";
 
     public void logAction(String actionName) {
@@ -25,11 +25,11 @@ public class ClientActionLogger {
     }
 
     public void initializeLogFile() {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(CSV_FILE_PATH))) {
-            // Write the CSV header to the file
-            writer.println(CSV_HEADER);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try (PrintWriter writer = new PrintWriter(new FileWriter(CSV_FILE_PATH))) {
+//            // Write the CSV header to the file
+//            writer.println(CSV_HEADER);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }

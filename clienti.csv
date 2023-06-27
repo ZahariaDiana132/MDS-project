@@ -1,13 +1,6 @@
 Action,Time
-createClient,2023-05-28 13:21:10
-getClientById,2023-05-28 13:21:10
-updateClient,2023-05-28 13:21:10
-getallproduse,2023-05-28 13:21:10
-createcos,2023-05-28 13:21:10
-createCarte,2023-05-28 13:21:10
-updatecostotal,2023-05-28 13:21:10
-updateprodus,2023-05-28 13:21:10
-getallprodbycosid,2023-05-28 13:21:10
-createComanda,2023-05-28 13:21:10
-getcomandabyid,2023-05-28 13:21:10
-getallcomenzi,2023-05-28 13:21:10
+createClient,2023-06-27 19:58:09
+createClient,2023-06-27 19:59:19
+createClient,2023-06-27 20:03:42
+createCarte,2023-06-27 20:03:52
+createCarte,2023-06-27 20:07:44
