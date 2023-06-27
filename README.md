@@ -26,14 +26,9 @@ Logo aplicatie:
 [Video demo](https://youtu.be/b4y8DzXUu6g)
 
 
+[trello backlog+user stories](https://trello.com/b/hXInivB5/mds)
 
-Lucruri noi:
-Am implementat un tip de produs - Carte
-Comanda formata din cos de cumparaturi si client
-am csv pentru operatiile facute in ele folosing logger
-am si cateva exceptii testate
-foloses generice si clase sealed-non sealed -> motiv explicat in cod
-am si un design pattern de structura
-am lucrat pe template-ul pao-template 
-folosesc docker desktop, intelliji, postgresSql
+
+
+
 
