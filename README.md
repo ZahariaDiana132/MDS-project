@@ -24,6 +24,9 @@ Logo aplicatie:
 
 
 [Video demo](https://youtu.be/b4y8DzXUu6g)
+
+
+
 Lucruri noi:
 Am implementat un tip de produs - Carte
 Comanda formata din cos de cumparaturi si client
