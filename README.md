@@ -22,6 +22,11 @@ Logo aplicatie:
 
 ![logo](https://github.com/ZahariaDiana132/PAO-lab/assets/79654042/75c200ab-366d-40de-a6ea-6c6e2970246c)
 
+
+[Video demo](https://youtu.be/b4y8DzXUu6g)
+
+
+
 Lucruri noi:
 Am implementat un tip de produs - Carte
 Comanda formata din cos de cumparaturi si client
