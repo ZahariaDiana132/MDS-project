@@ -147,5 +147,40 @@ public class CarteService {
         actionLogger.logAction("getallprodbycosid");
         return produsList;
     }
+
+    public Carte getProdusById(int produsId) {
+        String sql = "SELECT * FROM produs WHERE id = ?";
+        Carte produs = null;
+
+        try {
+            PreparedStatement statement = produsRepository.getConnection().prepareStatement(sql);
+            statement.setInt(1, produsId);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                produs = new Carte();
+                produs.setId(resultSet.getInt("id"));
+                produs.setAutor(resultSet.getString("autor"));
+                produs.setSect(resultSet.getString("sect"));
+                produs.setSubsect(resultSet.getString("subsect"));
+                produs.setNume(resultSet.getString("nume"));
+                produs.setEditura(resultSet.getString("editura"));
+                produs.setPret(resultSet.getDouble("pret"));
+                produs.setNr(resultSet.getInt("nr"));
+                produs.setCosid(resultSet.getInt("cos_id"));
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return produs;
+    }
+
+
+
 }
 

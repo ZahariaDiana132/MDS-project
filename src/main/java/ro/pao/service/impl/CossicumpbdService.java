@@ -57,6 +57,7 @@ public class CossicumpbdService {
                 cossicumpbd.setId(resultSet.getInt("id"));
                 cossicumpbd.setCumparatorId(resultSet.getInt("cumparatorid"));
                 cossicumpbd.setCosId(resultSet.getInt("cosid"));
+
             }
 
             resultSet.close();
