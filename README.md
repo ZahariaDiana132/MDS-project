@@ -26,7 +26,7 @@ Lucruri noi:
 Am implementat un tip de produs - Carte
 Comanda formata din cos de cumparaturi si client
 am csv pentru operatiile facute in ele folosing logger
-am si cateva exceptii testate, ciudat ca una nu merge cand o aplic pt baza de data
+am si cateva exceptii testate
 foloses generice si clase sealed-non sealed -> motiv explicat in cod
 am si un design pattern de structura
 am lucrat pe template-ul pao-template 
