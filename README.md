@@ -5,7 +5,7 @@ Definire proiect:
 
 Name of app : What is going on in my library?
 
-Evidenta librarie online unde sunt vandute produse de tip carte/manual, program facut pentru cel care detine libraria si vrea sa tina evidenta cumparatorilor si a comenzilor precum si a produselor(si daca sunt sau nu in stoc,cate din acelasi tip de produs sunt in stoc). 
+Evidenta librarie online unde sunt vandute produse de tip carte/manual, program facut pentru cel care detine libraria si vrea sa tina evidenta cumparatorilor si a comenzilor precum si a produselor.
 ...........................................................
 
 
@@ -34,38 +34,29 @@ c.Comanda : (id,date produse, pretul total, id cititor)
 Main class
 Service class
      
-Enum: Tip produse
-     
+  
 ................................................................
-
-
 
 ACTIUNI POSIBILE:
 
 
  1.Adaugare un tip de produs
 
- 2.Adaugarea mai multor tipuri de produs
-
- 3.Editare produs dupa id //aici se poate creste stocul cand mai vin livrari
+ 2.Editare produs dupa id 
 
  4.Stergere produs dupa id // aici poti sterge un tip de produs cand nu se mai vinde
 
  5.Afisare date unui produs
 
- 6.Sortare produse crescator dupa cantitatea de stoc
+ 6.Adaugare cititor  //evidenta clienti 
 
- 7.Adaugare cititor  //evidenta clienti 
+ 7.Gaseste cititor dupa id
 
- 8.Gaseste cititor dupa id
+ 8.Adaugare comanda
 
- 9.Adaugare comanda
-
- 10.Gaseste comanda dupa id
+ 9.Gaseste comanda dupa id//intereseaza doar totalul si cine a facut-o, clientii cu comenzi mari pot primi discount
 
 .................................................................
-
-**Stocul scade cand apare produsul in comanda, daca stoc = 0 atunci nu e in stoc, initial din fiecare produs sunt cate 3
 
 
 Owner: Me-Zaharia Diana-Cristiana 
