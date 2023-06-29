@@ -1,5 +1,3 @@
-<<<<<<< tema1
-
 
 Definire proiect:
 
